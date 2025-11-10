@@ -7,13 +7,17 @@
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
 
-    char estado, cod[3], cidade [20];
+  // Declaração das variaveis
+
+    char estado, cod, cidade [50];
+    char cod[3];
     int populacao, pontosTuristicos;
     float area, pib;
 
-    char estado2, cod2[3], cidade2[20];
-    int populacao2, pontosTuristicos2;
-    float area2, pib2;
+    char segundoEstado, segundaCidade [50];
+    char segundoCod[3];
+    int segundoPopulacao, segundoPontosTuristicos;
+    float segundaArea, segundoPib;
 
   // Área para entrada de dados
 
@@ -22,66 +26,68 @@ int main() {
     printf("Insira os dados da primeira carta: \n");
 
     printf("Digite a letra do estado: \n");
-    scanf(" %c", &estado); // espaço antes de %c ignora Enter anterior
-
     printf("Digite o código da carta: \n");
-    scanf(" %d", &cod);
-    setbuf(stdin, NULL); // limpa o buffer do teclado
+    scanf("%s", cod);
+    printf("Digite o código da carta: \n");
+    scanf("%s\n", cod);
 
     printf("Digite o nome da cidade: \n");
-    scanf(" %s", cidade);
+    fgets(cidade, 50, stdin);
 
     printf("Digite a população: \n");
-    scanf(" %d", &populacao);
+    scanf( "%d", &populacao);
 
     printf("Digite a área: \n");
-    scanf(" %f", &area);
+    scanf("%f", &area);
 
     printf("Digite o PIB: \n");
-    scanf(" %f", &pib);
-
-    printf("Digite o número de pontos turísticos: \n");
-    scanf(" %d", &pontosTuristicos);
+      printf("Digite o número de pontos turísticos: \n");
+      scanf("%d", &pontosTuristicos);
+  
+      // Limpar buffer
+      while (getchar() != '\n');
+  
+    // Dados da segunda carta
 
     // Dados da segunda carta
 
-    printf("Insira os dados da segunda carta: \n");
-
+    printf("Digite o código da carta: \n");
+    scanf("%s", segundoCod);
     printf("Digite a letra do estado: \n");
-    scanf(" %c", &estado2); // espaço antes de %c ignora Enter anterior
+    scanf("%c", &segundoEstado); // espaço antes de %c ignora Enter anterior
 
     printf("Digite o código da carta: \n");
-    scanf(" %d", &cod2);
-    setbuf(stdin, NULL); // limpa o buffer do teclado
+    scanf("%s", segundoCod);
 
     printf("Digite o nome da cidade: \n");
-    scanf(" %s", cidade2);
+    fgets(segundaCidade, 50, stdin);
 
     printf("Digite a população: \n");
-    scanf(" %d", &populacao2);
+    scanf("%d", &segundoPopulacao);
 
     printf("Digite a área: \n");
-    scanf(" %f", &area2);
+    scanf("%f", &segundaArea);
 
     printf("Digite o PIB: \n");
-    scanf(" %f", &pib2);
+    scanf("%f", &segundoPib);
 
     printf("Digite o número de pontos turísticos: \n");
-    scanf(" %d", &pontosTuristicos2);
+    scanf("%d", &pontosTuristicos);
 
   // Área para exibição dos dados da cidade
 
   //Saida dos dados da primeira carta
 
     printf("Carta: 1 \n");
-    printf("Estado: %c\nCódigo: %c\nNome da cidade: %c\n", estado, cod, cidade);
+    printf("Estado: %c\nCódigo: %2s\nNome da cidade: %s\n", estado, cod, cidade);
     printf("População: %d\nÁrea: %f\nPIB: %d\nNumero de pontos Turisticos: %d\n", populacao, area, pib, pontosTuristicos);
            
   //Saída de dados da segunda carta
 
   printf("Carta: 1 \n");
-    printf("Estado: %c\nCódigo: %c\nNome da cidade: %c\n", estado2, cod2, cidade2);
-    printf("População: %d\nÁrea: %f\nPIB: %d\nNumero de pontos Turisticos: %d\n", populacao2, area2, pib2, pontosTuristicos2);
+    printf("Estado: %c\nCódigo: %2s\nNome da cidade: %s\n", segundoEstado, segundoCod, segundaCidade);
+    printf("População: %d\nÁrea: %f\nPIB: %d\nNumero de pontos Turisticos: %d\n", segundoPopulacao, segundaArea, segundoPib, segundoPontosTuristicos);
 
-return 0;
+  return 0;
 } 
+
