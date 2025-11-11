@@ -9,18 +9,18 @@ int main() {
 
   // Variáveis da primeira cidade
 
-  char codigo[4];
+  char estado;
+  char codigo[3];
   char cidade[50]; 
   int populacao;
   float area;
   float pib;
   int pontosturisticos;
-  char estado;
 
   // Variáveis da segunda cidade
 
   char segundoestado;
-  char segundocodigo[4];
+  char segundocodigo[3];
   char segundacidade[50]; 
   int segundapopulacao;
   float segundaarea;
@@ -34,8 +34,9 @@ int main() {
   // Declaração das variaveis da primeira cidade
   printf("Digite os dados da primeira carta:\n");
 
+
   printf("Digite o estado (A-H): ");
-  scanf(" %c", estado);
+  scanf(" %c", &estado);
          
   // Limpar buffer
       while (getchar() != '\n');
@@ -66,7 +67,7 @@ int main() {
   printf("\nDigite os dados da segunda cidade:\n");
 
   printf("Digite o estado (sigla): ");    
-  scanf(" %c", segundoestado);
+  scanf(" %c", &segundoestado);
       while (getchar() != '\n');
 
   printf("Digite o código da cidade: ");
