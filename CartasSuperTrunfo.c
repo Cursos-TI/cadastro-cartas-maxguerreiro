@@ -15,11 +15,11 @@ int main() {
   float area;
   float pib;
   int pontosturisticos;
-  char estado[3];
+  char estado;
 
   // Variáveis da segunda cidade
 
-  char segundoestado[4];
+  char segundoestado;
   char segundocodigo[4];
   char segundacidade[50]; 
   int segundapopulacao;
@@ -35,7 +35,7 @@ int main() {
   printf("Digite os dados da primeira carta:\n");
 
   printf("Digite o estado (A-H): ");
-  scanf(" %3s", estado);
+  scanf(" %c", estado);
          
   // Limpar buffer
       while (getchar() != '\n');
@@ -66,7 +66,7 @@ int main() {
   printf("\nDigite os dados da segunda cidade:\n");
 
   printf("Digite o estado (sigla): ");    
-  scanf(" %2s", segundoestado);
+  scanf(" %c", segundoestado);
       while (getchar() != '\n');
 
   printf("Digite o código da cidade: ");
@@ -93,7 +93,7 @@ int main() {
   printf("---------------------------------------\n");
 
   printf("\n--- Carta 1: ---\n");
-  printf("Estado: %1s\n", estado);
+  printf("Estado: %c\n", estado);
   printf("Código da Cidade: %s\n", codigo);
   printf("Nome da Cidade: %s\n", cidade);
   printf("População: %d\n", populacao);
@@ -102,7 +102,7 @@ int main() {
   printf("Pontos Turísticos: %d\n", pontosturisticos);
 
   printf("\n--- Carta 2: ---\n");
-  printf("Estado: %1s\n", segundoestado);
+  printf("Estado: %c\n", segundoestado);
   printf("Código da Cidade: %s\n", segundocodigo);
   printf("Nome da Cidade: %s\n", segundacidade);
   printf("População: %d\n", segundapopulacao);
