@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das cartas
@@ -30,20 +31,16 @@ int main() {
    // Área para entrada de dados
 
   printf("Cadastro de Cidade para o Super Trunfo\n");
-  printf("---------------------------------------\n");
+  printf("-----------------------------------------\n");
   // Declaração das variaveis da primeira cidade
   printf("Digite os dados da primeira carta:\n");
 
 
   printf("Digite o estado (A-H): ");
   scanf(" %c", &estado);
-         
-  // Limpar buffer
-      while (getchar() != '\n');
 
   printf("Digite o código da cidade: ");
   scanf(" %4s", codigo);
-      while (getchar() != '\n');
 
   printf("Digite o nome da cidade: ");
   scanf(" %[^\n]", cidade);
@@ -51,10 +48,10 @@ int main() {
   printf("Digite a população da cidade: ");
   scanf(" %d", &populacao);
 
-  printf("Digite a área da cidade (em km²): ");
+  printf("Digite a área da cidade: ");
   scanf(" %f", &area);
 
-  printf("Digite o PIB da cidade (em bilhões): ");
+  printf("Digite o PIB da cidade: ");
   scanf(" %f", &pib);
 
   printf("Digite o número de pontos turísticos da cidade: ");
@@ -68,11 +65,9 @@ int main() {
 
   printf("Digite o estado (A-H): ");    
   scanf(" %c", &segundoestado);
-      while (getchar() != '\n');
 
   printf("Digite o código da cidade: ");
   scanf(" %4s", segundocodigo);
-      while (getchar() != '\n');
 
   printf("Digite o nome da cidade: ");
   scanf(" %[^\n]", segundacidade);
@@ -80,10 +75,10 @@ int main() {
   printf("Digite a população da cidade: ");
   scanf(" %d", &segundapopulacao);
 
-  printf("Digite a área da cidade (em km²): ");
+  printf("Digite a área da cidade: ");
   scanf(" %f", &segundaarea);
 
-  printf("Digite o PIB da cidade (em bilhões): ");
+  printf("Digite o PIB da cidade: ");
   scanf(" %f", &segundopib);
 
   printf("Digite o número de pontos turísticos da cidade: ");
