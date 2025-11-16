@@ -13,24 +13,26 @@ int main() {
   char estado;
   char codigo[4];
   char cidade[50]; 
-  int populacao;
+  unsigned long int populacao;
   float area;
   float pib;
   int pontosturisticos;
   float densidadePopulacional; // para uma melhor precisão, poderia usar double.
   float pibPerCapita;
+  float superPoder;
 
   // Variáveis da segunda cidade
 
   char segundoestado;
   char segundocodigo[4];
   char segundacidade[50]; 
-  int segundapopulacao;
+  unsigned long int segundapopulacao;
   float segundaarea;
   float segundopib;
   int segundopontosturisticos;
   float segundaDensidadePopulacional;
   float segundoPibPerCapita;
+  float superPoder2;
 
 
    // Área para entrada de dados
@@ -62,14 +64,6 @@ int main() {
   printf("Digite o número de pontos turísticos da cidade: ");
   scanf(" %d", &pontosturisticos);
 
-  //Área de calculo da denseidade populacional da primeira cidade
-
-  densidadePopulacional = (float) populacao / area; //fazendo o cast para float para evitar erro de divisão inteira.
-
-  //Área de calculo do pib per capita da primeira cidade
-
-  pibPerCapita = (float)(pib * 1000000000) / populacao; 
-
    // Declaração das variaveis da Segunda cidade
 
    printf("---------------------------------------\n");
@@ -97,12 +91,20 @@ int main() {
   printf("Digite o número de pontos turísticos da cidade: ");
   scanf(" %d", &segundopontosturisticos);
 
-    //Área de calculo da denseidade populacional da segunda cidade
+    //Área de calculo da denseidade populacional das cidades
 
+  densidadePopulacional = (float) populacao / area; //fazendo o cast para float para evitar erro de divisão inteira.
   segundaDensidadePopulacional = (float)segundapopulacao / segundaarea; //fazendo o cast para float para evitar erro de divisão inteira.
-  //Área de calculo do pib per capita da segunda cidade
 
+  //Área de calculo do pib per capita das cidades
+
+  pibPerCapita = (float)(pib * 1000000000) / populacao; 
   segundoPibPerCapita = (float)(segundopib * 1000000000) / segundapopulacao;
+
+  //Área para calculo do super poder das cidades
+
+  superPoder = (float) (populacao + area + pibPerCapita + pontosturisticos + densidadePopulacional) + pib/1000000000; //normalizando o pib per capita para evitar overflow.
+  superPoder2 = (float) (segundapopulacao + segundaarea + segundoPibPerCapita + segundopontosturisticos + segundaDensidadePopulacional) + segundopib/1000000000;
 
   // Área para exibição dos dados das cartas
 
@@ -118,6 +120,7 @@ int main() {
   printf("Pontos Turísticos: %d\n", pontosturisticos);
   printf("Densidade Populacional: %.2f habitantes/km²\n", densidadePopulacional);
   printf("PIB per Capita: %.2f\n", pibPerCapita);
+  printf("Super Poder: %.2f\n", superPoder);
 
   printf("\n--- Carta 2: ---\n");
   printf("Estado: %c\n", segundoestado);
@@ -129,7 +132,28 @@ int main() {
   printf("Pontos Turísticos: %d\n", segundopontosturisticos);
   printf("Densidade Populacional: %.2f habitantes/km²\n", segundaDensidadePopulacional);
   printf("PIB per Capita: %.2f\n", segundoPibPerCapita);
+  printf("Super Poder: %.2f\n", superPoder2);
+
+  //Área de comparação dos atributos das cartas
+
+  printf("\n--- Comparação dos Atributos ---\n");
+  //comparação pupolacao > segundapopulacao;
+  printf("População: Carta %d venceu!\n", populacao > segundapopulacao ? 1: 2);
+  //comparação area > segundaarea;
+  printf("Área: Carta %d venceu!\n", area > segundaarea ? 1: 2);
+  //comparação pib > segundopib;
+  printf("PIB: Carta %d venceu!\n", pib > segundopib ? 1: 2);
+  //comparação pontosturisticos > segundopontosturisticos;
+  printf("Pontos Turísticos: Carta %d venceu!\n", pontosturisticos > segundopontosturisticos ? 1: 2);
+  //comparação densidadePopulacional > segundaDensidadePopulacional;
+  printf("Densidade Populacional: Carta %d venceu!\n", densidadePopulacional < segundaDensidadePopulacional ? 1: 2); //Sinal invertido, pois menor densidade é melhor.
+  //comparação pibPerCapita > segundoPibPerCapita;
+  printf("PIB per Capita: Carta %d venceu!\n", pibPerCapita > segundoPibPerCapita ? 1: 2);
+  //comparação superPoder > superPoder2;
+  printf("Super Poder: Carta %d venceu!", superPoder > superPoder2 ? 1: 2);
 
   return 0;
+
+  //versão 1.0;
 } 
 
