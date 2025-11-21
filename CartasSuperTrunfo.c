@@ -8,38 +8,24 @@
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
 
-  // Variáveis da primeira cidade
-
-  char estado;
-  char codigo[4];
-  char cidade[50]; 
-  unsigned long int populacao;
-  float area;
-  float pib;
-  int pontosturisticos;
-  float densidadePopulacional; // para uma melhor precisão, poderia usar double.
-  float pibPerCapita;
-  float superPoder;
-
-  // Variáveis da segunda cidade
-
-  char segundoestado;
-  char segundocodigo[4];
-  char segundacidade[50]; 
-  unsigned long int segundapopulacao;
-  float segundaarea;
-  float segundopib;
-  int segundopontosturisticos;
-  float segundaDensidadePopulacional;
-  float segundoPibPerCapita;
-  float superPoder2;
-
+  char estado, segundoestado;
+  char codigo[4], segundocodigo[4];
+  char cidade[50], segundacidade[50];
+  unsigned long int populacao, segundapopulacao;
+  float area, segundaarea;
+  float pib, segundopib;
+  int pontosturisticos, segundopontosturisticos;
+  float densidadePopulacional, segundaDensidadePopulacional; // para uma melhor precisão, poderia usar double.
+  float pibPerCapita, segundoPibPerCapita;
+  float superPoder, superPoder2;
 
    // Área para entrada de dados
 
   printf("Cadastro de Cidade para o Super Trunfo\n");
   printf("-----------------------------------------\n");
+  
   // Declaração das variaveis da primeira cidade
+
   printf("Digite os dados da primeira carta:\n");
 
 
@@ -136,24 +122,17 @@ int main() {
 
   //Área de comparação dos atributos das cartas
 
-  printf("\n--- Comparação dos Atributos ---\n");
-  //comparação pupolacao > segundapopulacao;
-  printf("População: Carta %d venceu!\n", populacao > segundapopulacao ? 1: 2);
-  //comparação area > segundaarea;
-  printf("Área: Carta %d venceu!\n", area > segundaarea ? 1: 2);
-  //comparação pib > segundopib;
-  printf("PIB: Carta %d venceu!\n", pib > segundopib ? 1: 2);
-  //comparação pontosturisticos > segundopontosturisticos;
-  printf("Pontos Turísticos: Carta %d venceu!\n", pontosturisticos > segundopontosturisticos ? 1: 2);
-  //comparação densidadePopulacional > segundaDensidadePopulacional;
-  printf("Densidade Populacional: Carta %d venceu!\n", densidadePopulacional < segundaDensidadePopulacional ? 1: 2); //Sinal invertido, pois menor densidade é melhor.
-  //comparação pibPerCapita > segundoPibPerCapita;
-  printf("PIB per Capita: Carta %d venceu!\n", pibPerCapita > segundoPibPerCapita ? 1: 2);
-  //comparação superPoder > superPoder2;
-  printf("Super Poder: Carta %d venceu!", superPoder > superPoder2 ? 1: 2);
+  printf("---------------------------------------\n");
+
+  if (densidadePopulacional < segundaDensidadePopulacional)
+    printf("\nA carta com maior Super Poder é: %s com densidade populacional de %.2f\n", cidade, densidadePopulacional);
+  else if (segundaDensidadePopulacional < densidadePopulacional)
+    printf("\nA carta com maior Super Poder é: %s com densidade populacional de %.2f\n", segundacidade, segundaDensidadePopulacional);
+  else
+    printf("\nAs duas cartas possuem a mesma densidade populacional de %.2f\n", densidadePopulacional);
 
   return 0;
 
-  //versão 1.0;
+  //versão 2.0;
 } 
 
