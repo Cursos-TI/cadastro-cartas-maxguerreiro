@@ -1,0 +1,26 @@
+# Arquivos compilados (não versionar)
+*.exe
+*.o
+*.out
+*.obj
+*.dll
+*.so
+*.a
+
+# Diretórios comuns de build
+/build/
+/bin/
+/dist/
+
+# Arquivos temporários do VSCode
+.vscode/
+
+# Backups comuns
+*.log
+*.tmp
+*.bak
+
+# Mantém apenas o que importa
+!README.md
+!CartasSuperTrunfo.c
+!CartasSuperTrunfo
